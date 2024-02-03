@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbyaqnh5wrivy"]
+
+[ext_resource type="Script" path="res://e_Slime.gd" id="1_xcxbv"]
+[ext_resource type="Texture2D" uid="uid://4jgu32ex6xah" path="res://NinjaAdventure/Actor/Monsters/Slime.png" id="2_x45df"]
+
+[sub_resource type="Animation" id="Animation_caiyd"]
+resource_name = "walkUp"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hr0s4"]
+_data = {
+"walkUp": SubResource("Animation_caiyd")
+}
+
+[node name="e_Slime" type="CharacterBody2D"]
+script = ExtResource("1_xcxbv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x45df")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hr0s4")
+}
